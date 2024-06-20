@@ -118,7 +118,6 @@ source <(kubectl completion zsh)
 
 # Personal Aliases
 alias listen="lsof -iTCP -sTCP:LISTEN -P"
-alias listen="lsof -iTCP -sTCP:LISTEN -P"
 alias gpl="ggpull"
 alias k8s="kubectl config use-context"
 alias gs="git status"
@@ -126,9 +125,18 @@ alias k="kubectl"
 alias gfast="gaa && git commit --amend --no-edit && ggpush -f "
 alias dlb="git branch | grep -v '^*' | xargs git branch -d "
 alias podsnr="kubectl get pods --all-namespaces|grep 0/|grep -v Evicted|grep -v Completed "
-alias dck-login-dev="aws --profile aws-ct-default ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 412241670359.dkr.ecr.us-east-1.amazonaws.com"
-alias tf="/usr/local/Cellar/terraform-1.0.10/terraform"
+alias tf="/usr/local/Cellar/terraform-1.4.6/terraform"
 
-#CLOUDBREAK
+
+
+#QWIRE
+alias docker-login-dev="aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 109649286507.dkr.ecr.us-east-1.amazonaws.com"
+alias aws-login=". /Users/cassio/work/qwire/helpers/aws_login_mfa.sh "
+alias deploy-lambda=". /Users/cassio/work/qwire/helpers/AWS_lambda_libraries.sh "
 # Work dir
-cd ~/work/cloudbreak
+cd ~/work/violetx
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/cassio/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/cassio/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/cassio/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/cassio/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
